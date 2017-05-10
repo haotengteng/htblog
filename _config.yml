@@ -1,12 +1,12 @@
 # Site settings
-title: Hux Blog
-SEOTitle: 郝腾腾的博客 | Hux Blog
+title: Tenyed Blog
+SEOTitle: 郝腾腾的博客 | Tenyed Blog
 header-img: img/home-bg.jpg
-email: huxpro@gmail.com
+email: haot_mail@163.com
 description: "关于前端与设计、黑客与画家 | 郝腾腾，Web & Mobile Lover，Front-End Engineer，UX Designer | 这里是 @Hux郝腾腾 的个人博客，与你一起发现更大的世界。"
 keyword: "郝腾腾, Hux郝腾腾, Hux, 鬼栈, huxpro, @huxpro, 郝腾腾的博客, Hux Blog, 博客, 个人网站, 互联网, 前端, 设计, 产品, 肖玉, Lynn, 肖玉的男朋友"
-url: "https://huangxuan.me"              # your host, for absolute URL
-baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
+url: "https://haotengteng.github.io"              # your host, for absolute URL
+baseurl: "/htblog/about/"                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 
 
