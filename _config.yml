@@ -3,7 +3,7 @@ title: Tenyed Blog
 SEOTitle: 郝腾腾的博客 | Tenyed Blog
 header-img: img/home-bg.jpg
 email: huxpro@gmail.com
-description: "后端 | java| 黑客与画家 | 黄玄| 这里是 郝腾 的个人博客，与你一起发现更大的世界。"
+description: "后端 | 郝腾 | java| 黑客与画家 | 黄玄| 这里是 郝腾 的个人博客，与你一起发现更大的世界。"
 keyword: "郝腾, 王媛卓, java, Htt Blog, 博客, 个人网站, 互联网, 王媛卓的男朋友"
 url: "https://haotengteng.github.io"              # your host, for absolute URL
 baseurl: "/"                             # for example, '/blog' if your blog hosted on 'host/blog'
@@ -51,7 +51,7 @@ kramdown:
 #disqus_username: _your_disqus_short_name_
 
 # Duoshuo settings
-duoshuo_username: huxblog
+duoshuo_username: htblog
 # Share component is depend on Comment so we can NOT use share only.
 duoshuo_share: true                     # set to false if you want to use Comment without Sharing
 
