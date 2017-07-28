@@ -1,0 +1,45 @@
+---
+layout:     post
+title:      "使用Maven下载jar包场景分析"
+subtitle:   " \"关于Maven中repository和mirror的关系（小记）\""
+date:       2017-07-28 14:58:00
+author:     "Htt"
+header-img: "img/home-bg-o.jpg"
+catalog: true
+tags:
+    - 开发工具
+---
+> “简单分析jar包的下载过程 ”
+## 正文
+
+首先maven在构建项目的时候，发现项目中需要的jar包，、
+
+第一步：去本地仓库中查找对应的加jar包（版本，artificialId，groupId等一致），如果发现就用本地jar包
+
+当然如果是快照版本的话此步骤略过
+
+第二部：去配置的私服仓库下载jar包，如果有那就将jia包同步到本地仓库，导入项目；如果没有那么就会出现下面的情况：
+
+**需要注意的是第二部的情况是在私服仓库没有配置镜像的情况下，如果此时仓库（不管是不是私服）配置了镜像，并且镜像的mirrorOf配置是*或者是该仓库的仓库Id，那么这个jar文件是不会去仓库取的，而是对应的镜像地址获取，然后同步到私服仓库，同步到本地仓库，导入项目。**
+
+需要注意的地方：
+
+**repository的匹配是按照顺序的，然后如果一个仓库可以匹配到多个镜像，那么明确仓库Id的镜像会被首先使用。另外我们在项目中配置的如下**
+```
+<distributionManagement>
+    <repository>
+        <id>release</id>
+        <name>Team Nexus Release Repository</name>
+        <url>http:***content/repositories/releases</url>
+    </repository>
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>Team Nexus Snapshot Repository</name>
+        <url>http:***content/repositories/snapshots</url>
+        <uniqueVersion>false</uniqueVersion>
+    </snapshotRepository>
+</distributionManagement>
+```
+以上配置是项目团队的发布jar报的地址（当然发布到这个地址那么拉取的时候也是这个地址，那么setting文件的私服仓库地址也就是这个），
+
+个人经验：团队开发的时候，可以将 私服地址配置为仓库，然后配置一个和国内的（速度快）镜像地址，同时mirrorOf设置为central（中央仓库的仓库Id），这样在开发过程中，首先回去私服拉包，私服没有的默认走中央仓库，然后匹配到了 Of为中央仓库的仓库Id：central，这样就会走国内的镜像地址。
