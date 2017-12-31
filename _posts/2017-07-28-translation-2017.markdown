@@ -2,7 +2,7 @@
 layout:     post
 title:      "浅谈分布式事务"
 subtitle:   " \"分布式事务个人理解及几种业界解决方案\""
-date:       2017-07-28 14:44:00
+date:       2017-10-14 19:30:00
 author:     "Htt"
 header-img: "img/post-bg-kuaidi.jpg"
 catalog: true
