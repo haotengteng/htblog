@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "浅谈分布式事务"
-subtitle:   " \"分布式事务个人理解及几种业界解决方案\""
+title:      "多场景下MySQL InnoDB存储引擎的加锁分析（未完待续）"
+subtitle:   " \"多场景下MySQL InnoDB存储引擎的加锁分析   \""
 date:       2018-01-01 14:45:00
 author:     "Htt"
 header-img: "img/post-bg-os-metro.jpg"
